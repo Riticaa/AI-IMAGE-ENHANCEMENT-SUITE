@@ -1,13 +1,10 @@
-from realesrgan import RealESRGAN
-import torch
-from PIL import Image
+import cv2
 
-device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+sr = cv2.dnn_superres.DnnSuperResImpl_create()
 
-model = RealESRGAN(device, scale=4)
-model.load_weights('weights/RealESRGAN_x4.pth')
+sr.readModel("backend/enhancement/models/EDSR_x4.pb")
+sr.setModel("edsr", 4)
 
 def enhance_resolution(image):
-    image = Image.fromarray(image)
-    sr_image = model.predict(image)
-    return sr_image
+    output = sr.upsample(image)
+    return output
