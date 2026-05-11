@@ -1,4 +1,10 @@
 venv/
+.venv/
+node_modules/
+frontend/node_modules/
 __pycache__/
 *.pyc
 outputs/
+# Local model/weight directories
+backend/enhancement/weights/
+gfpgan/weights/
