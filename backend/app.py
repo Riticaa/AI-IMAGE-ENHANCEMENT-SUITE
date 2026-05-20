@@ -5,13 +5,13 @@ from fastapi.middleware.cors import CORSMiddleware
 import cv2
 import numpy as np
 
-from backend.enhancement.denoising import denoise_image
-from backend.enhancement.color_correction import adjust_brightness_contrast
-from backend.enhancement.super_resolution import enhance_resolution
-from backend.enhancement.sharpen import sharpen_image
-from backend.enhancement.background_remove import remove_background
-from backend.enhancement.hdr_filter import hdr_filter
-from backend.enhancement.face_enhance import enhance_face
+from enhancement.denoising import denoise_image
+from enhancement.color_correction import adjust_brightness_contrast
+from enhancement.super_resolution import enhance_resolution
+from enhancement.sharpen import sharpen_image
+from enhancement.background_remove import remove_background
+from enhancement.hdr_filter import hdr_filter
+from enhancement.face_enhance import enhance_face
 
 app = FastAPI()
 

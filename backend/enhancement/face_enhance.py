@@ -2,7 +2,7 @@ from gfpgan import GFPGANer
 import cv2
 import os
 
-model_path = "backend/enhancement/weights/GFPGANv1.4.pth"
+model_path="enhancement/weights/GFPGANv1.4.pth"
 
 restorer = GFPGANer(
     model_path=model_path,

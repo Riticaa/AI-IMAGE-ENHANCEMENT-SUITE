@@ -4,7 +4,7 @@ print("Loading model...")
 
 sr = cv2.dnn_superres.DnnSuperResImpl_create()
 
-sr.readModel("backend/enhancement/models/FSRCNN_x4.pb")
+sr.readModel("enhancement/models/FSRCNN_x4.pb")
 
 sr.setModel("fsrcnn", 4)
 
