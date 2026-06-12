@@ -575,6 +575,13 @@ overflow: "hidden",
               <FaStar />
               Face Enhance
             </button>
+            <button
+  style={buttonStyle}
+  onClick={() => enhanceImage("enhance-all")}
+>
+   <FaRocket />
+  Enhance All
+</button>
           </div>
 
           {loading && (
