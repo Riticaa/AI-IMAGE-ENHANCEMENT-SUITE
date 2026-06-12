@@ -89,7 +89,7 @@ const interval = setInterval(() => {
 
     try {
       const response = await axios.post(
-        `http://127.0.0.1:8000/${endpoint}/`,
+        `https://riticaa-ai-image-enhancement-suite.hf.space/${endpoint}/`,
         formData,
         {
           responseType: "blob",
