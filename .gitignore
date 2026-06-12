@@ -8,6 +8,7 @@ __pycache__/
 *.pyc
 
 .vscode/
+
 .env
 .env.local
 
@@ -19,3 +20,13 @@ Thumbs.db
 
 backend/enhancement/weights/
 gfpgan/weights/
+
+# Build folders
+dist/
+build/
+
+# Logs
+*.log
+
+# Jupyter
+.ipynb_checkpoints/
