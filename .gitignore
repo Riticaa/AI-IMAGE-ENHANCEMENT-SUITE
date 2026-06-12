@@ -1,10 +1,21 @@
 venv/
 .venv/
+
 node_modules/
 frontend/node_modules/
+
 __pycache__/
 *.pyc
+
+.vscode/
+.env
+.env.local
+
 outputs/
-# Local model/weight directories
+Test_images/
+
+.DS_Store
+Thumbs.db
+
 backend/enhancement/weights/
 gfpgan/weights/
