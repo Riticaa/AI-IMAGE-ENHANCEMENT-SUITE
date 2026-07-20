@@ -88,13 +88,15 @@ const interval = setInterval(() => {
 }, 1200);
 
     try {
-      const response = await axios.post(
-        `https://riticaa-ai-image-enhancement-suite.hf.space/${endpoint}/`,
-        formData,
-        {
-          responseType: "blob",
-        }
-      );
+      const API_URL = "http://127.0.0.1:8000";
+
+const response = await axios.post(
+    `${API_URL}/${endpoint}/`,
+    formData,
+    {
+        responseType: "blob",
+    }
+);
 
       const imageBlob = new Blob([response.data], {
         type: "image/png",

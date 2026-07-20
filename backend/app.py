@@ -11,7 +11,7 @@ from enhancement.super_resolution import enhance_resolution
 from enhancement.sharpen import sharpen_image
 from enhancement.background_remove import remove_background
 from enhancement.hdr_filter import hdr_filter
-from enhancement.face_enhance import enhance_face
+from enhancement.face_enhance_v2 import enhance_face
 
 app = FastAPI()
 
