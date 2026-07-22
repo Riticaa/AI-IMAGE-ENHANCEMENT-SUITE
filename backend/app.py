@@ -14,6 +14,12 @@ from enhancement.hdr_filter import hdr_filter
 from enhancement.face_enhance_v2 import enhance_face
 
 app = FastAPI()
+@app.get("/")
+def root():
+    return {
+        "status": "online",
+        "message": "Pixora Backend is running!"
+    }
 
 app.add_middleware(
     CORSMiddleware,
