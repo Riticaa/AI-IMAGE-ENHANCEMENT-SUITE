@@ -1,19 +1,24 @@
 import cv2
 import os
 
-print("Loading model...")
-
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 MODEL_PATH = os.path.join(BASE_DIR, "models", "FSRCNN_x4.pb")
 
-sr = cv2.dnn_superres.DnnSuperResImpl_create()
+sr = None
 
-sr.readModel(MODEL_PATH)
+def get_model():
+    global sr
 
-sr.setModel("fsrcnn", 4)
+    if sr is None:
+        print("Loading Super Resolution model...")
+        sr = cv2.dnn_superres.DnnSuperResImpl_create()
+        sr.readModel(MODEL_PATH)
+        sr.setModel("fsrcnn", 4)
+        print("Model loaded successfully!")
 
-print("Model loaded successfully!")
+    return sr
+
 
 def enhance_resolution(image):
-    output = sr.upsample(image)
-    return output
+    model = get_model()
+    return model.upsample(image)
