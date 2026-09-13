@@ -1,4 +1,4 @@
-import { initializeApp } from 'firebase/app';
+import { initializeApp, getApps } from 'firebase/app';
 import { getAuth, GoogleAuthProvider } from 'firebase/auth';
 
 const firebaseConfig = {
@@ -11,6 +11,8 @@ const firebaseConfig = {
   measurementId: import.meta.env.VITE_FIREBASE_MEASUREMENT_ID,
 };
 
-const app = initializeApp(firebaseConfig);
+// Prevent duplicate-app error during HMR
+const app = getApps().length === 0 ? initializeApp(firebaseConfig) : getApps()[0];
+
 export const auth = getAuth(app);
 export const googleProvider = new GoogleAuthProvider();
