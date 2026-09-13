@@ -4,6 +4,7 @@ WORKDIR /app
 
 ENV PYTHONDONTWRITEBYTECODE=1
 ENV PYTHONUNBUFFERED=1
+ENV PORT=10000
 
 # Install system dependencies
 RUN apt-get update && \
@@ -23,10 +24,10 @@ RUN pip install --upgrade pip && \
 
 COPY . .
 
-# Hugging Face Spaces runs as non-root user
+# Run as non-root user
 RUN useradd -m -u 1000 user
 USER user
 
-EXPOSE 7860
+EXPOSE 10000
 
-CMD ["uvicorn", "app:app", "--host", "0.0.0.0", "--port", "7860"]
+CMD ["sh", "-c", "uvicorn app:app --host 0.0.0.0 --port ${PORT:-10000}"]
